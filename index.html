@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Indosat HiFi - Berasa Koneksinya.</title>
+    <meta
+      name="description"
+      content="Indosat HiFi menyediakan layanan internet broadband untuk rumah dengan berbagai pilihan paket dari ISP terbaik. Cek jangkauan area Anda sekarang!"
+    />
+    <meta
+      name="keywords"
+      content="pasang wifi, indosat hifi, internet rumah, wifi murah, provider internet, indosat"
+    />
+    <link rel="canonical" href="http://indosatwifi.id/" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <meta
+      name="google-site-verification"
+      content="4aZHzCtWetFGJsPwexeKY6FvxK6kqFsiQCTn-QP-uc"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://indosatwifi.id/" />
+    <meta property="og:title" content="Indosat HiFi - Berasa Koneksinya." />
+    <meta
+      property="og:description"
+      content="Indosat HiFi menyediakan layanan internet broadband untuk rumah dengan berbagai pilihan paket dari ISP terbaik. Cek jangkauan area Anda sekarang!"
+    />
+    <meta
+      property="og:image"
+      content="http://indosatwifi.id/assets/images/og-image.jpg"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="http://indosatwifi.id/" />
+    <meta
+      property="twitter:title"
+      content="Indosat HiFi - Berasa Koneksinya."
+    />
+    <meta
+      property="twitter:description"
+      content="Indosat HiFi menyediakan layanan internet broadband untuk rumah dengan berbagai pilihan paket dari ISP terbaik. Cek jangkauan area Anda sekarang!"
+    />
+    <meta
+      property="twitter:image"
+      content="http://indosatwifi.id/assets/images/og-image.jpg"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-17469326255"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-R5LK1FJPPV");
+      gtag("config", "AW-17469326255");
+    </script>
+
+    <style>
+      :root {
+        --hifi-magenta: #da097d;
+        --hifi-yellow: #ffb814;
+        --hifi-dark: #212529;
+        --hifi-light: #f9f9f9;
+        --hifi-text: #333333;
+        --hifi-text-muted: #6c757d;
+      }
+
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #ffffff;
+        color: var(--hifi-text);
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: #ffffff;
+        padding: 1rem 0;
+        transition: box-shadow 0.3s ease-in-out;
+        border-bottom: 1px solid #eee;
+        z-index: 1050;
+      }
+      .navbar.scrolled {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+      .navbar-brand img {
+        height: 45px;
+        width: auto;
+      }
+      .navbar .nav-link {
+        color: var(--hifi-dark);
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+      .navbar .nav-link:hover,
+      .navbar .nav-link.active {
+        color: var(--hifi-magenta);
+      }
+
+      .btn-primary-hifi {
+        background-color: var(--hifi-magenta);
+        border-color: var(--hifi-magenta);
+        color: #ffffff;
+        font-weight: 700;
+        padding: 0.8rem 2.2rem;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(218, 9, 125, 0.25);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .btn-primary-hifi:hover {
+        background-color: #b8006b;
+        border-color: #b8006b;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(218, 9, 125, 0.4);
+      }
+
+      @keyframes pulse-glow {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 5px 20px rgba(218, 9, 125, 0.25);
+        }
+        50% {
+          transform: scale(1.05);
+          box-shadow: 0 8px 35px rgba(218, 9, 125, 0.55);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 5px 20px rgba(218, 9, 125, 0.25);
+        }
+      }
+
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%) skewX(-25deg);
+        }
+        100% {
+          transform: translateX(250%) skewX(-25deg);
+        }
+      }
+
+      .navbar .btn-cta-special,
+      #hero-main .btn-cta-special,
+      .service-card .btn-cta-special {
+        animation: pulse-glow 2.2s infinite ease-in-out !important;
+      }
+
+      .btn-cta-special::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.5) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        opacity: 0.8;
+        transform: translateX(-100%) skewX(-25deg);
+        animation: shine 3s infinite;
+        animation-delay: 1s;
+      }
+
+      .section {
+        padding: 100px 0;
+      }
+      .section-light {
+        background-color: var(--hifi-light);
+      }
+      .section-title {
+        font-weight: 800;
+        font-size: 3.2rem;
+        color: var(--hifi-dark);
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+      .section-subtitle {
+        font-size: 1.15rem;
+        color: var(--hifi-text-muted);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .text-magenta {
+        color: var(--hifi-magenta);
+      }
+
+      .milestone-item {
+        position: relative;
+        text-align: center;
+      }
+      .milestone-item .icon-circle {
+        width: 80px;
+        height: 80px;
+        background-color: var(--hifi-magenta);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2.2rem;
+        color: #ffffff;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 5px 20px rgba(218, 9, 125, 0.3);
+        transition: all 0.3s ease;
+      }
+      .milestone-item:hover .icon-circle {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(218, 9, 125, 0.4);
+      }
+      .milestone-item h5 {
+        font-weight: 700;
+        color: var(--hifi-dark);
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+      }
+      .milestone-item p {
+        color: var(--hifi-text-muted);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      @media (min-width: 992px) {
+        .milestone-wrapper {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+        .milestone-item {
+          flex: 1;
+          max-width: 25%;
+          padding: 0 1rem;
+          position: relative;
+        }
+        .milestone-item:not(:last-child)::after {
+          content: "";
+          position: absolute;
+          top: 40px;
+          left: 50%;
+          width: 100%;
+          height: 2px;
+          background-color: #e9ecef;
+          z-index: 1;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .milestone-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          position: relative;
+        }
+        .milestone-wrapper::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 40px;
+          width: 2px;
+          height: 100%;
+          background-color: #e9ecef;
+          z-index: 1;
+        }
+        .milestone-item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 2.5rem;
+          text-align: left;
+          position: relative;
+          width: 100%;
+        }
+        .milestone-item .icon-circle {
+          margin: 0;
+          flex-shrink: 0;
+        }
+        .milestone-item .milestone-content {
+          margin-left: 20px;
+        }
+        .milestone-item:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .footer {
+        background-color: var(--hifi-light);
+        color: var(--hifi-text);
+        padding: 80px 0 30px;
+        border-top: 1px solid #e9ecef;
+      }
+      .footer .footer-logo {
+        height: 50px;
+        width: auto;
+      }
+      .footer h6 {
+        color: var(--hifi-dark);
+        font-weight: 700;
+      }
+      .footer a {
+        color: var(--hifi-text-muted);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .footer a:hover {
+        color: var(--hifi-magenta);
+      }
+      .footer .social-icon {
+        font-size: 1.5rem;
+      }
+      .footer .copyright {
+        border-top: 1px solid #dee2e6;
+        padding-top: 2rem;
+        margin-top: 3rem;
+        color: var(--hifi-text-muted);
+      }
+
+      .floating-whatsapp {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25d366;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1060;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+      }
+      .floating-whatsapp:hover {
+        transform: scale(1.1);
+        color: white;
+      }
+
+      .cs-icon {
+        height: 50px;
+        width: auto;
+        transition: transform 0.3s ease;
+        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+      }
+      .cs-icon:hover {
+        transform: scale(1.1);
+      }
+
+      @media (max-width: 991px) {
+        .navbar {
+          transition: transform 0.3s ease-in-out, padding 0.3s ease-in-out;
+        }
+        .navbar.scrolled-down {
+          transform: translateY(-100%);
+        }
+
+        .floating-whatsapp {
+          transition: bottom 0.3s ease-in-out, transform 0.3s ease;
+        }
+        .floating-whatsapp.scrolled-down {
+          bottom: -100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top navbar-light shadow-sm">
+        <div class="container">
+          <a class="navbar-brand" href="http://indosatwifi.id/">
+            <img
+              src="http://indosatwifi.id/assets/images/hifi-logo.png?v=1771648421"
+              alt="Indosat HiFi Logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#layanan">Produk / Layanan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#keunggulan">Keunggulan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#testimoni">Testimoni</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#tentang">Tentang Kami</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#kontak">Hubungi Kami</a>
+              </li>
+            </ul>
+            <button
+              class="btn btn-primary-hifi btn-cta-special d-none d-lg-inline-block check-location-btn"
+            >
+              Cek Jangkauan Area
+            </button>
+            <a
+              href="http://indosatwifi.id/redirect/whatsapp?text=Halo%20Admin,%20Saya%20ingin%20pasang%20WiFi"
+              target="_blank"
+              class="ms-lg-3 mt-3 mt-lg-0 d-inline-block"
+            >
+              <img
+                src="http://indosatwifi.id/uploads/customer_services.png"
+                alt="Customer Service"
+                class="cs-icon"
+              />
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <style>
+        #hero-main {
+          padding-top: 80px;
+          padding-bottom: 80px;
+          background-color: #ffffff;
+        }
+        #hero-main .hero-text h1 {
+          font-size: 4.2rem;
+          font-weight: 800;
+          line-height: 1.25;
+          color: var(--hifi-dark);
+        }
+        #hero-main .hero-text .lead {
+          font-size: 1.3rem;
+          color: var(--hifi-text-muted);
+          max-width: 500px;
+          line-height: 1.6;
+        }
+        #hero-main .coverage-form .btn {
+          padding: 1.2rem 2.5rem;
+          font-size: 1.2rem;
+          border-radius: 50px;
+        }
+        #hero-main .coverage-form .btn .fa-map-marker-alt {
+          font-size: 1.6em;
+          vertical-align: middle;
+        }
+
+        #hero-slider-container {
+          aspect-ratio: 3 / 2;
+          width: 100%;
+          background-color: #f8f9fa;
+          border-radius: 1rem;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+          overflow: hidden;
+          position: relative;
+        }
+        #hero-slider,
+        .carousel-inner,
+        .carousel-item {
+          height: 100%;
+        }
+        .carousel-item {
+          background-size: cover;
+          background-position: center;
+        }
+        #hero-slider .carousel-control-prev,
+        #hero-slider .carousel-control-next {
+          width: 10%;
+        }
+        #hero-slider .carousel-indicators [data-bs-target] {
+          background-color: var(--hifi-magenta);
+        }
+
+        .service-card {
+          background-color: #ffffff;
+          border-radius: 1rem;
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+          transition: all 0.3s ease;
+          border: 1px solid #e0e0e0;
+        }
+        .service-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+        .service-card .card-header-image {
+          position: relative;
+          height: 180px;
+          overflow: hidden;
+          border-top-left-radius: 1rem;
+          border-top-right-radius: 1rem;
+        }
+        .service-card .card-img-bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+        .service-card:hover .card-img-bg {
+          transform: scale(1.05);
+        }
+        .service-card .card-title-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 1.2rem 1.8rem;
+          color: #ffffff;
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0) 100%
+          );
+        }
+        .service-card .card-title-overlay h4 {
+          font-size: 1.8rem;
+          font-weight: 800;
+          text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+          margin: 0;
+          line-height: 1.2;
+        }
+        .service-card .card-body {
+          padding: 1.8rem;
+        }
+        .service-card .speed-text {
+          font-size: 2.8rem;
+          font-weight: 800;
+          color: var(--hifi-dark);
+          line-height: 1;
+        }
+        .service-card .price-text {
+          font-size: 2rem;
+          font-weight: 700;
+          color: var(--hifi-magenta);
+        }
+        .service-card .features li {
+          list-style: none;
+          margin-bottom: 0.5rem;
+          color: var(--hifi-text-muted);
+        }
+        .service-card .features .fa-check-circle {
+          color: var(--hifi-magenta);
+          margin-right: 8px;
+        }
+        .service-card .btn-choose {
+          background-color: var(--hifi-magenta);
+          color: #ffffff;
+          font-weight: 600;
+          padding: 0.8rem 1.5rem;
+          border-radius: 0.5rem;
+          border: none;
+          transition: all 0.3s ease;
+        }
+        .service-card .btn-choose:hover {
+          background-color: #b8006b;
+          transform: translateY(-2px);
+        }
+
+        #keunggulan {
+          position: relative;
+          overflow: hidden;
+          padding-top: 100px;
+          padding-bottom: 100px;
+          background-color: #ffffff;
+        }
+        .background-logo {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 600px;
+          height: auto;
+          opacity: 0.04;
+          z-index: 1;
+          pointer-events: none;
+        }
+        .bento-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.5rem;
+          position: relative;
+          z-index: 2;
+        }
+        .bento-item {
+          background-color: var(--hifi-light);
+          border-radius: 20px;
+          padding: 2.5rem;
+          transition: all 0.3s ease;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .bento-item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .bento-item.item-1 {
+          grid-column: span 2;
+        }
+        .bento-item .icon-box {
+          font-size: 2rem;
+          color: #ffffff;
+          background-color: var(--hifi-magenta);
+          width: 60px;
+          height: 60px;
+          margin-bottom: 1.5rem;
+          border-radius: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+        }
+        .bento-item:hover .icon-box {
+          transform: scale(1.05) rotate(-5deg);
+        }
+        .bento-item h5 {
+          font-weight: 700;
+          color: var(--hifi-dark);
+          margin-bottom: 0.8rem;
+        }
+        .bento-item p {
+          color: var(--hifi-text-muted);
+          font-size: 0.95rem;
+          line-height: 1.6;
+        }
+
+        #testimoni .testimonial-card {
+          background-color: #ffffff;
+          border-radius: 1rem;
+          padding: 2.5rem;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+          text-align: center;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        #testimoni .testimonial-card img {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          margin: 0 auto 1rem;
+          border: 3px solid var(--hifi-magenta);
+        }
+        #testimoni .testimonial-card .testimonial-stars {
+          color: var(--hifi-yellow);
+          margin-bottom: 1rem;
+        }
+        #testimoni .testimonial-card p.fst-italic {
+          font-size: 1.05rem;
+          color: var(--hifi-text-muted);
+          margin-bottom: 1rem;
+        }
+        #testimoni .testimonial-card h5 {
+          font-weight: 700;
+          color: var(--hifi-dark);
+          margin-bottom: 0.2rem;
+        }
+
+        #tentang p {
+          text-align: justify;
+        }
+
+        .modal-backdrop.show {
+          backdrop-filter: blur(5px);
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+        .btn-location-picker {
+          border: 2px solid #e0e0e0;
+          border-radius: 1rem;
+          color: var(--hifi-dark);
+          transition: all 0.3s ease;
+        }
+        .btn-location-picker:hover {
+          border-color: var(--hifi-magenta);
+          color: var(--hifi-magenta);
+          background-color: var(--hifi-light);
+        }
+
+        @media (max-width: 991px) {
+          #hero-main .hero-text h1 {
+            font-size: 2.8rem;
+            text-align: center;
+          }
+          #hero-main .hero-text .lead {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          #hero-main .coverage-form {
+            text-align: center;
+          }
+          #hero-slider-container {
+            margin-top: 2rem;
+          }
+          .bento-grid {
+            grid-template-columns: 1fr;
+          }
+          .bento-item.item-1 {
+            grid-column: span 1;
+          }
+          .background-logo {
+            width: 400px;
+          }
+          .section {
+            padding: 60px 0;
+          }
+          .section-title {
+            font-size: 2.2rem;
+          }
+        }
+      </style>
+
+      <section id="hero-main">
+        <div class="container">
+          <div class="row align-items-center gy-5">
+            <div class="col-lg-6 hero-text" data-aos="fade-right">
+              <h1 class="mb-4">
+                Internet Rumah <br /><span class="text-magenta"
+                  >Super Cepat</span
+                >
+                Untuk Semua Kebutuhanmu
+              </h1>
+              <p class="lead mb-4">
+                Nikmati streaming tanpa buffering, game tanpa lag, dan kerja
+                dari rumah lebih produktif dengan koneksi 100% fiber optic dari
+                Indosat HiFi.
+              </p>
+              <div class="coverage-form mt-4">
+                <button
+                  class="btn btn-primary-hifi btn-cta-special check-location-btn"
+                  type="button"
+                >
+                  <i class="fas fa-map-marker-alt me-2"></i> Cek Jangkauan Area
+                </button>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+              <div id="hero-slider-container">
+                <div
+                  id="hero-slider"
+                  class="carousel slide h-100"
+                  data-bs-ride="carousel"
+                  data-bs-interval="5000"
+                >
+                  <div class="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#hero-slider"
+                      data-bs-slide-to="0"
+                      class="active"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#hero-slider"
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2"
+                    ></button>
+                  </div>
+                  <div class="carousel-inner h-100">
+                    <div
+                      class="carousel-item active"
+                      style="
+                        background-image: url('http://indosatwifi.id/uploads/slide_show/1754280257_6f529a423b0ece871986.jpg?v=1771648421');
+                      "
+                    ></div>
+                    <div
+                      class="carousel-item"
+                      style="
+                        background-image: url('http://indosatwifi.id/uploads/slide_show/1761706614_6c8d78d8738024bad6d2.jpg?v=1771913771');
+                      "
+                    ></div>
+                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#hero-slider"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#hero-slider"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="layanan" class="section section-light">
+        <div class="container">
+          <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold section-title">Produk & Layanan Kami</h2>
+            <p class="section-subtitle">
+              Pilih paket yang paling sesuai dengan kebutuhan Anda. Semua sudah
+              termasuk GRATIS biaya instalasi & sewa router!
+            </p>
+          </div>
+          <div class="row g-4 justify-content-center">
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="zoom-in-up"
+              data-aos-delay="0"
+            >
+              <div class="card h-100 service-card">
+                <div class="card-header-image">
+                  <img
+                    src="http://indosatwifi.id/uploads/cards/1754553002_9c66a59e9d52835bf3d8.jpg?v=1771648421"
+                    class="card-img-bg"
+                    alt="Paket HiFi Standard"
+                  />
+                  <div class="card-title-overlay">
+                    <h4>HiFi Standard</h4>
+                  </div>
+                </div>
+
+                <div class="card-body d-flex flex-column">
+                  <p class="speed-text mb-0">
+                    100 <span class="fs-4 fw-normal">Mbps</span>
+                  </p>
+                  <p class="price-text mt-2 mb-4">
+                    Rp 220.890 <span class="fs-6 fw-normal">/bulan</span>
+                  </p>
+
+                  <ul class="list-unstyled features flex-grow-1">
+                    <li>
+                      <i class="fas fa-check-circle"></i> Harga sudah termasuk
+                      PPN 11%
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle"></i> Unlimited Tanpa FUP
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle"></i> Gratis Instalasi
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle"></i> Sewa Router Gratis
+                    </li>
+                  </ul>
+                  <div class="d-grid mt-auto">
+                    <button
+                      class="btn btn-choose btn-cta-special check-location-btn"
+                    >
+                      Pilih Paket Ini
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="zoom-in-up"
+              data-aos-delay="100"
+            >
+              <div class="card h-100 service-card">
+                <div class="card-header-image">
+                  <img
+                    src="http://indosatwifi.id/uploads/cards/1754553002_9c66a59e9d52835bf3d8.jpg?v=1771648421"
+                    class="card-img-bg"
+                    alt="Paket HiFi Plus"
+                  />
+                  <div class="card-title-overlay">
+                    <h4>HiFi Plus</h4>
+                  </div>
+                </div>
+
+                <div class="card-body d-flex flex-column">
+                  <p class="speed-text mb-0">
+                    300 <span class="fs-4 fw-normal">Mbps</span>
+                  </p>
+                  <p class="price-text mt-2 mb-4">
+                    Rp 331.890 <span class="fs-6 fw-normal">/bulan</span>
+                  </p>
+
+                  <ul class="list-unstyled features flex-grow-1">
+                    <li>
+                      <i class="fas fa-check-circle"></i> Harga sudah termasuk
+                      PPN 11%
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle"></i> Unlimited Tanpa FUP
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle"></i> Gratis Instalasi
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle"></i> Sewa Router Gratis
+                    </li>
+                  </ul>
+                  <div class="d-grid mt-auto">
+                    <button
+                      class="btn btn-choose btn-cta-special check-location-btn"
+                    >
+                      Pilih Paket Ini
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="zoom-in-up"
+              data-aos-delay="200"
+            >
+              <div class="card h-100 service-card">
+                <div class="card-header-image">
+                  <img
+                    src="http://indosatwifi.id/uploads/cards/1754553002_9c66a59e9d52835bf3d8.jpg?v=1771648421"
+                    class="card-img-bg"
+                    alt="Paket HiFi Pro"
+                  />
+                  <div class="card-title-overlay">
+                    <h4>HiFi Pro</h4>
+                  </div>
+                </div>
+
+                <div class="card-body d-flex flex-column">
+                  <p class="speed-text mb-0">
+                    500 <span class="fs-4 fw-normal">Mbps</span>
+                  </p>
+                  <p class="price-text mt-2 mb-4">
+                    Rp 442.890 <span class="fs-6 fw-normal">/bulan</span>
+                  </p>
+
+                  <ul class="list-unstyled features flex-grow-1">
+                    <li>
+                      <i class="fas fa-check-circle"></i> Harga sudah termasuk
+                      PPN 11%
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle"></i> Unlimited Tanpa FUP
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle"></i> Gratis Instalasi
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle"></i> Sewa Router Gratis
+                    </li>
+                  </ul>
+                  <div class="d-grid mt-auto">
+                    <button
+                      class="btn btn-choose btn-cta-special check-location-btn"
+                    >
+                      Pilih Paket Ini
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="keunggulan" class="section">
+        <div class="container">
+          <img
+            src="http://indosatwifi.id/assets/images/hifi-logo.png?v=1771648421"
+            alt="Indosat HiFi Logo Background"
+            class="background-logo"
+          />
+          <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">Lebih Dari Sekadar Cepat</h2>
+            <p class="section-subtitle">
+              Kami memberikan keandalan dan kenyamanan untuk pengalaman internet
+              terbaik di rumah Anda.
+            </p>
+          </div>
+          <div class="bento-grid">
+            <div class="bento-item item-1" data-aos="fade-up">
+              <div class="icon-box"><i class="fas fa-wifi"></i></div>
+              <h5 class="fw-bold">100% Fiber Optic</h5>
+              <p class="text-muted">
+                Jaringan fiber murni menjamin koneksi super stabil dan tahan
+                dari segala gangguan cuaca, memastikan internet Anda selalu bisa
+                diandalkan.
+              </p>
+            </div>
+            <div class="bento-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon-box"><i class="fas fa-infinity"></i></div>
+              <h5 class="fw-bold">Unlimited Sejati</h5>
+              <p class="text-muted">
+                Gunakan sepuasnya tanpa batasan FUP. Kecepatan tidak akan turun.
+              </p>
+            </div>
+            <div class="bento-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon-box"><i class="fas fa-headset"></i></div>
+              <h5 class="fw-bold">Bantuan Sigap 24/7</h5>
+              <p class="text-muted">
+                Tim support kami selalu siap sedia membantumu kapan pun.
+              </p>
+            </div>
+            <div class="bento-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon-box"><i class="fas fa-exchange-alt"></i></div>
+              <h5 class="fw-bold">Upload & Download Simetris</h5>
+              <p class="text-muted">
+                Kecepatan upload sama kencangnya dengan download, ideal untuk
+                video call dan kirim file besar.
+              </p>
+            </div>
+            <div class="bento-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon-box"><i class="fas fa-tools"></i></div>
+              <h5 class="fw-bold">Gratis Biaya Pemasangan</h5>
+              <p class="text-muted">
+                Anda tidak perlu membayar biaya instalasi. Tim teknisi kami akan
+                memasangnya secara gratis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-to-order" class="section section-light">
+        <div class="container">
+          <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">4 Langkah Mudah Berlangganan</h2>
+            <p class="section-subtitle">
+              Proses pendaftaran kami rancang agar cepat, mudah, dan transparan
+              untuk kenyamanan Anda.
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="milestone-wrapper">
+                <div class="milestone-item" data-aos="fade-up">
+                  <div class="icon-circle">1</div>
+                  <div class="milestone-content">
+                    <h5>Registrasi</h5>
+                    <p>Cek area & pilih layanan</p>
+                  </div>
+                </div>
+                <div
+                  class="milestone-item"
+                  data-aos="fade-up"
+                  data-aos-delay="150"
+                >
+                  <div class="icon-circle">2</div>
+                  <div class="milestone-content">
+                    <h5>Mengisi Form</h5>
+                    <p>Mengisi formulir data berlangganan.</p>
+                  </div>
+                </div>
+                <div
+                  class="milestone-item"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <div class="icon-circle">3</div>
+                  <div class="milestone-content">
+                    <h5>Instalasi</h5>
+                    <p>Lacak proses instalasi melalui CS</p>
+                  </div>
+                </div>
+                <div
+                  class="milestone-item"
+                  data-aos="fade-up"
+                  data-aos-delay="450"
+                >
+                  <div class="icon-circle">4</div>
+                  <div class="milestone-content">
+                    <h5>Pembayaran</h5>
+                    <p>Lakukan pembayaran dan nikmati layanan HiFi Anda!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimoni" class="section">
+        <div class="container">
+          <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold section-title">
+              Dipercaya oleh Ribuan Keluarga
+            </h2>
+            <p class="section-subtitle">
+              Dengar apa kata mereka yang sudah merasakan manfaat internet rumah
+              Indosat HiFi.
+            </p>
+          </div>
+
+          <div class="row justify-content-center g-4">
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="zoom-in-up"
+              data-aos-delay="0"
+            >
+              <div class="testimonial-card">
+                <img
+                  src="https://placehold.co/80x80/da097d/white?text=BS"
+                  class="rounded-circle"
+                  alt="Foto Profil"
+                />
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="fst-italic">
+                  "Pelayanannya cepat sekali! Setelah daftar, besoknya teknisi
+                  langsung datang. Internetnya juga stabil, sangat
+                  direkomendasikan."
+                </p>
+                <h5 class="mb-0">Budi Santoso</h5>
+              </div>
+            </div>
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="zoom-in-up"
+              data-aos-delay="100"
+            >
+              <div class="testimonial-card">
+                <img
+                  src="https://placehold.co/80x80/da097d/white?text=CL"
+                  class="rounded-circle"
+                  alt="Foto Profil"
+                />
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <p class="fst-italic">
+                  "Cukup puas dengan kecepatannya. Awalnya sempat ada kendala
+                  tapi customer service merespon dengan baik dan cepat
+                  terselesaikan."
+                </p>
+                <h5 class="mb-0">Citra Lestari</h5>
+              </div>
+            </div>
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="zoom-in-up"
+              data-aos-delay="200"
+            >
+              <div class="testimonial-card">
+                <img
+                  src="https://placehold.co/80x80/da097d/white?text=JS"
+                  class="rounded-circle"
+                  alt="Foto Profil"
+                />
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="fst-italic">
+                  "Cek area sat-set, CSnya ramah poolll. Ini ISP yang ga banyak
+                  gimmick tapi pelayanannya juara."
+                </p>
+                <h5 class="mb-0">Jessica Setiawan</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tentang" class="section section-light">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+              <img
+                src="http://indosatwifi.id/assets/images/tentang-kami.jpg?v=1771648421"
+                class="img-fluid rounded shadow"
+                alt="Tim Indosat HiFi"
+              />
+            </div>
+            <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left">
+              <h2 class="fw-bold section-title">
+                Tentang <span class="text-magenta">Indosat HiFi</span>
+              </h2>
+              <p class="text-muted">
+                Indosat HiFi didirikan dengan satu misi sederhana: menyediakan
+                akses internet broadband yang cepat, andal, dan terjangkau untuk
+                setiap rumah di Indonesia. Kami percaya bahwa koneksi internet
+                yang baik adalah hak, bukan kemewahan.
+              </p>
+              <p class="text-muted">
+                Saat ini, layanan kami telah menjangkau berbagai kota besar dan
+                kecil di seluruh Indonesia untuk memastikan koneksi internet
+                terbaik sampai ke rumah Anda. Beberapa jangkauan utama kami
+                meliputi Jakarta, Bandung, Surabaya, Semarang, Yogyakarta,
+                Medan, Aceh, Bengkulu, Jambi, Palembang, Pekanbaru, Batam,
+                Makassar, Denpasar, Balikpapan, Pontianak, Karawang, Bekasi,
+                Tangerang, Depok, dan Bogor. Kami berkomitmen untuk terus
+                memperluas jangkauan kami ke lebih banyak wilayah di Jawa, Bali,
+                Sumatera, Kalimantan, dan Sulawesi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal Pengecekan Lokasi -->
+      <div
+        class="modal fade"
+        id="locationModal"
+        tabindex="-1"
+        aria-labelledby="locationModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="locationModalLabel">
+                Pilih Metode Pengecekan Lokasi
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <button
+                    id="use-current-location"
+                    class="btn btn-location-picker w-100 p-4 d-flex flex-column align-items-center"
+                  >
+                    <i class="fas fa-location-arrow fa-3x mb-3"></i>
+                    <span class="fw-bold fs-5">Gunakan Lokasi Saat Ini</span>
+                  </button>
+                </div>
+                <div class="col-md-6">
+                  <button
+                    id="use-map-location"
+                    class="btn btn-location-picker w-100 p-4 d-flex flex-column align-items-center"
+                  >
+                    <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
+                    <span class="fw-bold fs-5">Pilih Lokasi di Peta</span>
+                  </button>
+                </div>
+              </div>
+              <p
+                id="map-info"
+                class="text-center text-muted mt-3"
+                style="display: none"
+              >
+                Geser marker merah atau klik di peta untuk menentukan titik
+                lokasi pemasangan Anda.
+              </p>
+              <div
+                id="map-container"
+                class="mt-2 rounded"
+                style="display: none; height: 400px; border: 1px solid #ddd"
+              >
+                <div
+                  id="map"
+                  style="height: 100%; border-radius: inherit"
+                ></div>
+              </div>
+            </div>
+            <div class="modal-footer" id="map-footer" style="display: none">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Batal
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="confirm-map-location"
+                style="
+                  background-color: var(--hifi-magenta);
+                  border-color: var(--hifi-magenta);
+                "
+              >
+                Konfirmasi Lokasi Pilihan
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="kontak" class="footer">
+      <div class="container text-center">
+        <div class="mb-4">
+          <img
+            src="http://indosatwifi.id/assets/images/hifi-logo.png?v=1771648421"
+            alt="Indosat HiFi Logo"
+            class="footer-logo"
+          />
+        </div>
+        <p>"WiFi Nyaman, Hematnya Beneran."</p>
+        <p class="mb-4">
+          <a
+            href="mailto:support@indosathifi.id"
+            class="text-dark text-decoration-none"
+          >
+            <i class="fas fa-envelope me-2"></i> support@indosathifi.id
+          </a>
+        </p>
+        <div class="mt-4">
+          <a
+            href="https://www.instagram.com/indosat.hifi"
+            target="_blank"
+            class="social-icon me-3 text-magenta"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.tiktok.com/@indosat.hifi"
+            target="_blank"
+            class="social-icon me-3 text-magenta"
+            aria-label="TikTok"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/@indosathifi"
+            target="_blank"
+            class="social-icon text-magenta"
+            aria-label="YouTube"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
+        <hr class="my-4" />
+        <div class="container mt-4">
+          <h6 class="text-uppercase fw-bold mb-3">Area Layanan Kami</h6>
+          <p class="small text-muted">
+            Jakarta | Bandung | Surabaya | Semarang | Yogyakarta | Medan |
+            Palembang | Pekanbaru | Makassar | Denpasar | Balikpapan | Pontianak
+            | Manado | Kudus | Cirebon | Karawang | Bekasi | Tangerang | Depok |
+            Bogor | dan kota-kota lainnya.
+          </p>
+        </div>
+        <p class="mt-4">&copy; 2026 Indosat HiFi. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <a
+      href="http://indosatwifi.id/redirect/whatsapp?text=Halo%20Admin,%20Saya%20ingin%20pasang%20WiFi"
+      class="floating-whatsapp"
+      target="_blank"
+      title="Hubungi Kami di WhatsApp"
+      aria-label="Hubungi Kami di WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          duration: 800,
+          once: true,
+        });
+
+        const navbarHeight = document.querySelector(".navbar").offsetHeight;
+        document.querySelector("main").style.paddingTop = navbarHeight + "px";
+      });
+
+      $(document).ready(function () {
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $(".navbar").outerHeight();
+
+        $(window).scroll(function (event) {
+          var st = $(this).scrollTop();
+
+          if (Math.abs(lastScrollTop - st) <= delta) return;
+
+          if (st > lastScrollTop && st > navbarHeight) {
+            $(".navbar").addClass("scrolled-down");
+            $(".floating-whatsapp").addClass("scrolled-down");
+          } else {
+            if (st + $(window).height() < $(document).height()) {
+              $(".navbar").removeClass("scrolled-down");
+              $(".floating-whatsapp").removeClass("scrolled-down");
+            }
+          }
+
+          if (st > 50) {
+            $(".navbar").addClass("scrolled");
+          } else {
+            $(".navbar").removeClass("scrolled");
+          }
+
+          lastScrollTop = st;
+        });
+
+        if ($(window).scrollTop() > 50) {
+          $(".navbar").addClass("scrolled");
+        }
+      });
+    </script>
+
+    <script>
+      let map = null;
+      let marker = null;
+
+      $(document).ready(function () {
+        const locationModalElement = document.getElementById("locationModal");
+        const locationModal = new bootstrap.Modal(locationModalElement);
+
+        function checkCoverage(lat, lon) {
+          Swal.fire({
+            title: "Mengecek Lokasi...",
+            html: "Mohon tunggu sebentar, kami sedang memeriksa ketersediaan jaringan di titik Anda.",
+            allowOutsideClick: false,
+            didOpen: () => {
+              Swal.showLoading();
+            },
+          });
+
+          $.post("http://indosatwifi.id/api/coverage/check", {
+            lat: lat,
+            lon: lon,
+            csrf_test_name: "c9c614ad7c0e65c8d503fec38482ebc7",
+          })
+            .done(function (response) {
+              locationModal.hide();
+              Swal.fire({
+                icon: "success",
+                title: "Lokasi Tercover!",
+                text: response.message,
+                confirmButtonText: "Lanjutkan Pendaftaran",
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location.href = `http://indosatwifi.id/register`;
+                }
+              });
+            })
+            .fail(function (xhr) {
+              if (xhr.status === 429) {
+                Swal.fire({
+                  icon: "warning",
+                  title: "Batas Percobaan Tercapai",
+                  text: "Anda terlalu sering melakukan pengecekan. Silakan coba lagi dalam satu menit.",
+                });
+                return;
+              }
+
+              const error = xhr.responseJSON;
+              let message =
+                "Maaf, terjadi kesalahan saat memeriksa lokasi Anda.";
+              if (error && error.messages) {
+                if (error.messages.distance) {
+                  const distanceInKm = (error.messages.distance / 1000).toFixed(
+                    1,
+                  );
+                  message = `Maaf, lokasi Anda belum terjangkau. Jarak Anda sekitar ${error.messages.distance} meter (${distanceInKm} km) dari area layanan terdekat kami.`;
+                } else if (error.messages.error) {
+                  message = error.messages.error;
+                }
+              }
+              Swal.fire({
+                icon: "error",
+                title: "Lokasi Belum Terjangkau",
+                text: message,
+                confirmButtonText: "Hubungi Kami di WhatsApp",
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  window.open(
+                    "http://indosatwifi.id/redirect/whatsapp?text=Halo%20Admin,%20saya%20ingin%20bertanya%20mengenai%20cakupan%20area%20di%20lokasi%20saya.",
+                  );
+                }
+              });
+            });
+        }
+
+        $(".check-location-btn").on("click", function (e) {
+          e.preventDefault();
+          $("#map-container, #map-footer, #map-info").hide();
+          locationModal.show();
+        });
+
+        $("#use-current-location").on("click", function () {
+          navigator.geolocation.getCurrentPosition(
+            function (position) {
+              checkCoverage(
+                position.coords.latitude,
+                position.coords.longitude,
+              );
+            },
+            function () {
+              Swal.fire(
+                "Gagal",
+                "Tidak dapat mengambil lokasi Anda. Pastikan Anda telah mengizinkan akses lokasi untuk situs ini.",
+                "error",
+              );
+            },
+          );
+        });
+
+        $("#use-map-location").on("click", function () {
+          $("#map-container, #map-footer, #map-info").slideDown();
+
+          navigator.geolocation.getCurrentPosition(
+            function (position) {
+              initLeafletMap({
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+              });
+            },
+            function () {
+              initLeafletMap({ lat: -6.175392, lng: 106.827153 });
+            },
+          );
+        });
+
+        function initLeafletMap(coords) {
+          setTimeout(function () {
+            if (!map) {
+              map = L.map("map").setView([coords.lat, coords.lng], 14);
+
+              L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+                  maxZoom: 19,
+                  attribution: "© OpenStreetMap contributors",
+                },
+              ).addTo(map);
+
+              marker = L.marker([coords.lat, coords.lng], {
+                draggable: true,
+              }).addTo(map);
+
+              // Update marker posisi saat peta diklik
+              map.on("click", function (e) {
+                marker.setLatLng(e.latlng);
+              });
+            } else {
+              map.setView([coords.lat, coords.lng], 14);
+              marker.setLatLng([coords.lat, coords.lng]);
+            }
+            map.invalidateSize();
+          }, 200);
+        }
+
+        $("#confirm-map-location").on("click", function () {
+          if (marker) {
+            const position = marker.getLatLng();
+            checkCoverage(position.lat, position.lng);
+          } else {
+            Swal.fire(
+              "Error",
+              "Peta belum siap. Mohon tunggu sebentar.",
+              "error",
+            );
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
